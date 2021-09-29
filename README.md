@@ -11,7 +11,7 @@
 - (Optional) enable ssr in `svelte.config.js`
   
 ## Notes
-- If you want to use ssr, you have to comment out the first three lines of the init function in `example-rust-crate-rs/pkg/example-rust-crate-rs.js` every time rust stuff is recompiled, or some part of the build process(vite?) says that these lines are illegal in ssr mode
+- If you want to use ssr, you have to comment out the first three lines of the init function in `example-rust-crate-rs/pkg/example-rust-crate-rs.js` every time rust stuff is recompiled, or some part of the build process(vite?) says that these lines are illegal in ssr mode [Issue](https://github.com/lencx/vite-plugin-rsw/issues/23)
 
 ```javascript
 if (typeof input === 'undefined') {
@@ -19,5 +19,5 @@ if (typeof input === 'undefined') {
 }
 ```
 - Due to this limitation, ssr and prerendering should be turned off in `svelte.config.js` during development
-- Do not move your rust crate into the src directory, [ViteRsw](https://github.com/lencx/vite-plugin-rsw) will go into an endless loop because ViteRsw recompiles rust every time something changes in the src directory, even in the pkg directory, which logically should be excluded.
+- Do not move your rust crate into the src directory, [ViteRsw](https://github.com/lencx/vite-plugin-rsw) will go into an endless loop because ViteRsw recompiles rust every time something changes in the src directory, even in the pkg directory, which logically should be excluded. [Issue](https://github.com/lencx/vite-plugin-rsw/issues/24)
 - You may get internal server errors you run `npm run dev`. Just terminate the process and run again. As far as I can tell, its a bug somewhere upstream
