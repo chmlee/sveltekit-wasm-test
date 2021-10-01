@@ -15,8 +15,8 @@ export const config = {
 		//  // 	input = new URL('example-rust-crate-rs_bg.wasm', import.meta.url);
 		//  // }
 
-		ssr: false, // READ THE COMMENT ^
-		prerender: { enabled: false }, // READ THE COMMENT ^
+		ssr: true, // READ THE COMMENT ^
+		prerender: { enabled: true }, // READ THE COMMENT ^
 
 		target: '#svelte',
 		vite: { 
