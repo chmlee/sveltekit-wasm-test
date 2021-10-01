@@ -3,6 +3,7 @@
 ## Requirements
 - [Node.js](https://nodejs.org/en/)
 - [Rust + wasm-pack](https://rustwasm.github.io/docs/book/game-of-life/setup.html)
+- Rust also requires Visual studio build tools or Visual studio on windows
 
 ## Steps
 - `npm install`
