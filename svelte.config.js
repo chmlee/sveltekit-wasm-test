@@ -14,19 +14,17 @@ export const config = {
 		//  // if (typeof input === 'undefined') {
 		//  // 	input = new URL('example-rust-crate-rs_bg.wasm', import.meta.url);
 		//  // }
-
-		ssr: false, // READ THE COMMENT ^
-		prerender: { enabled: false }, // READ THE COMMENT ^
-
+		// ssr: false,
 		target: '#svelte',
 		vite: { 
 			plugins: [ 
 				// https://github.com/lencx/vite-plugin-rsw#plugin-options
-				// DO NOT MOVE THE RUST PACKAGE INTO src FOLDER, ViteRsw will start compiling endlessly
-				// The author has been notified on his discord server so it may be fixed in future
+				// TODO: different configs for dev and build environments
 				ViteRsw({ 
-					// root: "/src/lib/",
-					crates: [{ name: "example-rust-crate-rs" }] 
+					root: "src/lib/",
+					crates: [{ name: "example-rust-crate-rs" }],
+					unwatch: ["*/pkg/*"],
+					profile: process.env.NODE_ENV === 'production' ? "release" : "dev",
 				}) 
 			]
 		}
