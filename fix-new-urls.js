@@ -1,3 +1,4 @@
+// Temporary fix for https://github.com/vitejs/vite/issues/5169
 import { readFileSync, writeFileSync } from 'fs';
 
 const re = /[^\n]*new URL[^\n]*/g;
