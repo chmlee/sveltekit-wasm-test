@@ -3,7 +3,7 @@
 **TLDR:** Uses iframes and Sveltekit pages to run wasm on server side.
 
 - `fix-new-urls.js` is run during `node run build` to bypass [#5169](https://github.com/vitejs/vite/issues/5169)
-- [Wasm-bindgen](https://github.com/rustwasm/wasm-bindgen) glue code is not instanceable so it has to be isolated with iframes if one desires to use a wasm component more than once or without explicit support by the binary(for example supplying an instance id with each call)
+- ~~[Wasm-bindgen](https://github.com/rustwasm/wasm-bindgen) glue code is not instanceable so it has to be isolated with iframes if one desires to use a wasm component more than once or without explicit support by the binary(for example supplying an instance id with each call)~~ It is instanceable when you use structs in rust and this template will be updated accordingly(soon).
 - "Wasm components" are implemented as Sveltekit pages due to lack of top level async support in Svelte components [#5501](https://github.com/sveltejs/svelte/issues/5501)
 
 ## Requirements
