@@ -1,6 +1,8 @@
 import preprocess from 'svelte-preprocess';
 import { ViteRsw } from 'vite-plugin-rsw';
 
+import adapter from '@sveltejs/adapter-netlify';
+
 /** @type {import('@sveltejs/kit').Config} */
 export const config = {
 	preprocess: preprocess(),
@@ -15,6 +17,7 @@ export const config = {
 		//  // 	input = new URL('example-rust-crate-rs_bg.wasm', import.meta.url);
 		//  // }
 		// ssr: false,
+        adapter: adapter(),
 		target: '#svelte',
 		vite: { 
 			plugins: [ 
